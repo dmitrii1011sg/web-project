@@ -1,0 +1,26 @@
+{% extends "base.template.html" %}
+
+{% block content %}
+<div class="row bg-light form-container">
+      <form class="form-signin" action="" method="post" novalidate>
+            {{ context.form.hidden_tag() }}
+            <!-- <img class="mb-4" src="{{ url_for('static', filename='img/logo.png') }}" alt="" width="72" height="72"> -->
+            <h1 class="h3 mb-3 font-weight-normal">Log In</h1>
+            {% if context.message %}
+                  <div class="alert alert-dark" role="alert">
+                        {{ context.message }}
+                  </div>
+            {% endif %}
+            {{ context.form.login(type="login", class="form-control", placeholder="Логин") }}
+
+            {{ context.form.password(type="password", class="form-control", placeholder="Пароль") }}
+            <div class="checkbox mb-3">
+                  <label>
+                      {{ context.form.remember_me() }} Запомнить меня
+                  </label>
+            </div>
+            <p>Нет аккаунта? <a href="/register">Sign Up</a></p>
+            {{ context.form.submit(class="btn btn-lg btn-dark btn-block", type="submit") }}
+      </form>
+</div>
+{% endblock %}

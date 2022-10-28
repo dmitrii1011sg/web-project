@@ -1,0 +1,23 @@
+{% extends "base.template.html" %}
+
+{% block content %}
+<div class="row bg-light">
+      <form class="form-signup" action="" method="POST" enctype="multipart/form-data">
+            {{ context.form.hidden_tag() }}
+            <!-- <img class="mb-4" src="{{ url_for('static', filename='img/logo.png') }}" alt="" width="72" height="72"> -->
+            <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+            {% if context.message %}
+                  <div class="alert alert-dark" role="alert">
+                    {{ context.message }}
+                  </div>
+            {% endif %}
+            {{ context.form.login(type="login", class="form-control", placeholder="Login") }}
+            {{ context.form.roles(type="roles", class="form-control", placeholder="Roles") }}
+
+            {{ context.form.password(type="password", class="password", class="form-control", placeholder="Password") }}
+            {{ context.form.password_again(type="password", class="password_again", class="form-control", placeholder="Password again") }}
+            <p>Do you already have an account? <a href="/login">Log In</a></p>
+            {{ context.form.submit(class="btn btn-lg btn-dark btn-block", type="submit") }}
+      </form>
+</div>
+{% endblock %}

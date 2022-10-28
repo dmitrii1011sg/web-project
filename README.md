@@ -67,6 +67,7 @@
    ```sh
    TOKEN="your token"
    ```
+4. Create /db
 
 <p align="right">(<a href="#top">Наверх</a>)</p>
 

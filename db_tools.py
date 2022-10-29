@@ -1,4 +1,6 @@
 import os
+from data.role_model import Role
+from data.role_user_model import RoleUser
 
 from data.user_model import User
 
@@ -29,4 +31,7 @@ class DataBaseTool:
         if user: return user.get_user_information()
         return False
 
+    def get_user_by_role(self, role):
+        users = self.db_sess.query(User).filter(User.role == role).all()
+        return users
     

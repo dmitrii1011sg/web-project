@@ -17,7 +17,7 @@ class User(SqlAlchemyBase, UserMixin):
     lastname = sqlalchemy.Column(sqlalchemy.String, index=True, nullable=True)
     about = sqlalchemy.Column(sqlalchemy.String, index=True, nullable=True, default='Nothing')
     hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)
-    roles = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+    role = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     phone_number = sqlalchemy.Column(sqlalchemy.String)
     created_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)
 

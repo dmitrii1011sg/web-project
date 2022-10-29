@@ -2,70 +2,25 @@
     margin-bottom: 2%;
 }
 
-.form-signin{
+.form-container {
     width: 40%;
-    padding: 15px;
-    margin: auto;
-}
-  
-.form-signin .checkbox {
-    font-weight: 400;
-}
-  
-.form-signin .form-control {
-    position: relative;
-    box-sizing: border-box;
-    height: auto;
-    padding: 10px;
-    font-size: 16px;
-}
-  
-.form-signin input[type="login"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
-  
-.form-signin input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    background: linear-gradient(70deg, rgb(054, 102, 140), rgb(046, 062, 103), rgb(154, 102, 173));
+    padding: 8%;
+    border-radius: 6px;
+    clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+    color: white;
 }
 
-.form-signup{
-    width: 50%;
-    padding: 15px;
-    margin: auto;
-}
-  
-.form-signup .checkbox {
-    font-weight: 400;
-}
-  
-.form-signup .form-control {
-    position: relative;
-    box-sizing: border-box;
-    height: auto;
-    padding: 10px;
-    font-size: 16px;
-}
-  
-.form-signup input[type="login"] {
-    margin-bottom: 10px;
+.form-container input[type='submit'] {
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+    background: rgb(118, 77, 133);
+    color: white;
 }
 
-.form-signup input[type="password"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+.form-container input[type='submit']:hover {
+    background-color: rgb(68, 44, 77);
 }
-  
-.form-signup input[value="password_again"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-  
-.form-signup button[type="submit"] {
-    margin: 10px;
+
+.form-container input {
+    width: 100%;
 }

@@ -14,14 +14,12 @@ class DataBaseTool:
         self.db_sess = db_sess
 
     def create_user(self, login, password, phone_number: str, name, lastname, about, role) -> bool:
-        print('create user', login, password, phone_number, name, lastname, about)
         user_login = self.db_sess.query(User).filter(User.login == login)
         if not user_login.first():
             user = User(login=login, phone_number=phone_number, name=name, lastname=lastname, about=about, role=role)
             user.set_password(password)
             self.db_sess.add(user)
             self.db_sess.commit()
-            print(f'Susseful add user: {login, name, lastname}')
             return True
         return False
 

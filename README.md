@@ -11,7 +11,7 @@
   <p align="center">
     Web-Project
     <br />
-    <a href="https://github.com/dmitrii1011sg/forum_flask"><strong>Project repository »</strong></a>
+    <a href="https://github.com/dmitrii1011sg/web-project.git"><strong>Project repository »</strong></a>
     <br />
     <br />
   </p>
@@ -24,14 +24,12 @@
   <summary>Content</summary>
   <ol>
     <li>
-      <ul>
-        <li><a href="#built-with">Что использовалось при создании проекта</a></li>
-      </ul>
-    </li>
+      <a href="#built-with">What was used to create the project</a>
+     </li>
     <li>
-      <a href="#getting-started">Начало работы</a>
+      <a href="#getting-started">Begin</a>
       <ul>
-        <li><a href="#installation">Установка</a></li>
+        <li><a href="#installation">Install</a></li>
       </ul>
     </li>
     <li><a href="#contact">Контакты</a></li>
@@ -48,7 +46,7 @@
 * [SQLAlchemist](https://pypi.org/project/SQLAlchemy/)
 * [Bootstrap](https://getbootstrap.com)
 
-<p align="right">(<a href="#top">Наверх</a>)</p>
+<p align="right">(<a href="#top">top</a>)</p>
 
 
 
@@ -67,20 +65,19 @@
    ```sh
    TOKEN="your token"
    ```
-4. Create /db
 
-<p align="right">(<a href="#top">Наверх</a>)</p>
+<p align="right">(<a href="#top">top</a>)</p>
 
 <!-- CONTACT -->
 ## Contact
 
 Dmitrii Gorshkov - [@telegram_handle](https://t.me/dmitrii1011) - Team Leader, Frontend/Backend Developer <br />
-Egor Zykov - [@telegram_handle](https://t.me/inkogni7o) - Backend Developer <br />
+Egor Zykov - [@telegram_handle](https://t.me/inkogni7o) - Backend Developer, Manager <br />
 Konstantin Kraev - [@telegram_handle](https://t.me/kostia1303) - Backend Developer <br />
 Vlad Gavva - [@telegram_handle](https://t.me/neJlbMeHu) - Design <br />
 Tatiana Guseva - [@telegram_handle](https://t.me/no_brain_available) - Design
 
 
-Ссылка на проект: [https://github.com/dmitrii1011sg/web-project.git](https://github.com/dmitrii1011sg/forum_flask)
+Ссылка на проект: [https://github.com/dmitrii1011sg/web-project.git](https://github.com/dmitrii1011sg/web-project.git)
 
-<p align="right">(<a href="#top">Наверх</a>)</p>
+<p align="right">(<a href="#top">top</a>)</p>

@@ -66,7 +66,8 @@ def regist_user():
                                             phone_number=form.phone_number.data,
                                             name=form.name.data,
                                             lastname=form.lastname.data,
-                                            about=form.about.data)
+                                            about=form.about.data,
+                                            role=form.role.data)
 
         if user_info:
             return redirect("/login")
@@ -80,6 +81,16 @@ def profile_user(id: int):
     data_tool = DataBaseTool(db_session.create_session())  
     context = {'title_page': 'Profile', 'user': data_tool.get_user_info_by_id(id)}
     return render_template('profile-user.template.html', context=context)
+    
+@app.route('/users')
+def users_list():
+    data_tool = DataBaseTool(db_session.create_session())  
+    page_number = request.args.get('page')
+    if current_user.is_authenticated:
+        role = current_user.role
+        context = {'title_page': 'Users', 'users': data_tool.get_user_by_role(role)}
+        return render_template('users-list.template.html', context=context)
+    return redirect('/')
     
 
 def main():

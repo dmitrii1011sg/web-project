@@ -1,0 +1,15 @@
+{% extends "base.template.html" %}
+
+{% block content %}
+      <div class="container-person">
+        <div class="card-persone justify-content-start">
+            <ul class="list-group list-group-flush">
+                {% for user in context.users %}
+                    <li class="list-group-item">
+                        <a href="/profile/{{user.id}}">{{ user.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+      </div>
+{% endblock %}

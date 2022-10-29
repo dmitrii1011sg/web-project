@@ -12,5 +12,5 @@ class RegisterForm(FlaskForm):
     about = TextAreaField('About')
     password = PasswordField('Password', validators=[DataRequired()])
     password_again = PasswordField('Repeat password', validators=[DataRequired()])
-    # roles = StringField('Roles')
+    role = StringField('Role')
     submit = SubmitField('Register')

@@ -51,3 +51,39 @@
 .sign-up-form {
     width: 50%;
 }
+
+.container-person {
+    width: 80%;
+    background: linear-gradient(70deg, rgb(054, 102, 140), rgb(046, 062, 103), rgb(154, 102, 173));
+    padding: 8px;
+    border-radius: 6px;
+    clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+    color: #343a40;
+}
+
+.card-persone {
+    width: 100%;
+    background: white;
+    padding: 4%;
+    border-radius: 6px;
+    clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+    color: #343a40;
+}
+
+.card-persone .ava{
+    width: 30%;
+    padding: 4%;color: #343a40;
+}
+.card-persone .information{
+    width: 70%;
+    padding: 4%;color: #343a40;
+}
+
+.dropdown-menu {
+    background-color: #343a40;
+}
+
+.dropdown-menu .dropdown-item {
+    background-color: #343a40;
+    color: white;
+}

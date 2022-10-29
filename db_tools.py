@@ -24,4 +24,9 @@ class DataBaseTool:
             return user
         return False
 
+    def get_user_info_by_id(self, id: int):
+        user = self.db_sess.query(User).filter(User.id == id).first() 
+        if user: return user.get_user_information()
+        return False
+
     

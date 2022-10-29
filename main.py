@@ -75,6 +75,12 @@ def regist_user():
             return render_template('register.template.html', context=context)
     return render_template('register.template.html', context=context)
 
+@app.route('/profile/<int:id>')
+def profile_user(id: int):
+    data_tool = DataBaseTool(db_session.create_session())  
+    context = {'title_page': 'Profile', 'user': data_tool.get_user_info_by_id(id)}
+    return render_template('profile-user.template.html', context=context)
+    
 
 def main():
     db_session.global_init("db/database.db")

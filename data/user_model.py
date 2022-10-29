@@ -29,6 +29,7 @@ class User(SqlAlchemyBase, UserMixin):
 
     def get_user_information(self) -> dict:
         information = {
+            'login': self.login,
             'name': self.name,
             'lastname': self.lastname,
             'about': self.about,

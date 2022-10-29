@@ -26,11 +26,8 @@
                 <a class="nav-link" href="/users?page=0">Other Users</a>
               </li>
             </ul>
-            <!-- <form class="form-inline my-2 my-md-0">
-              <input class="form-control" type="text" placeholder="Search">
-            </form> -->
             {% if current_user.is_authenticated %}
-                <div class="dropdown dropleft btn-login">
+                <div class="dropdown dropleft">
                     <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {{ current_user.login }}
                     </button>

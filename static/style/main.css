@@ -1,6 +1,29 @@
-.navbar{
+.navbar-onelect {
     margin-bottom: 2%;
+    background: linear-gradient(70deg, rgb(054, 102, 140), rgb(046, 062, 103), rgb(154, 102, 173));
 }
+
+.navbar-onelect a {
+    text-decoration: none;
+    color: white;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+
+.navbar-onelect a:hover {
+    background-size: 100% 2px;
+}
+
+.navbar-onelect a[role="button"] {
+    text-decoration: none;
+    color: white;
+    border: none;
+    background-color: transparent;
+}
+
 
 .form-container {
     width: 40%;

@@ -30,7 +30,7 @@ def logout():
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('base.template.html', context={'title_page': 'Main'})
+    return render_template('main.template.html', context={'title_page': 'Main'})
 
 @app.route('/login', methods=['GET', 'POST'])
 def login_user():

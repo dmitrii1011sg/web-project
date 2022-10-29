@@ -12,15 +12,18 @@
 </head>
 <body style="background-color: #343a40;">
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-onelect">
         <a class="navbar-brand" href="/">Onelect</a>
         <div class="collapse navbar-collapse" id="navbarsExample02">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="/friends">Friends</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/users?page=0">Other Users</a>
               </li>
             </ul>
             <!-- <form class="form-inline my-2 my-md-0">
@@ -49,9 +52,9 @@
 </header>
 <!-- Begin page content -->
 <main role="main" class="container d-flex justify-content-center">
-    {% block content %}
+        {% block content %}
 
-    {% endblock %}
+        {% endblock %}
 </main>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

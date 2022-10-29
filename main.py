@@ -79,7 +79,7 @@ def regist_user():
 @app.route('/profile/<int:id>')
 def profile_user(id: int):
     data_tool = DataBaseTool(db_session.create_session())  
-    context = {'title_page': 'Profile', 'user': data_tool.get_user_info_by_id(id)}
+    context = {'title_page': 'Profile', 'user': data_tool.get_user_info_by_id(id), 'friend': data_tool.check_friend(current_user_id=current_user.id, user_id=id)}
     return render_template('profile-user.template.html', context=context)
     
 @app.route('/users')
@@ -91,6 +91,34 @@ def users_list():
         context = {'title_page': 'Users', 'users': data_tool.get_user_by_role(role, int(page_number)), 'page': int(page_number)}
         return render_template('users-list.template.html', context=context)
     return redirect('/')
+
+@app.route('/friends')
+def frinends_list():
+    data_tool = DataBaseTool(db_session.create_session())  
+    page_number = request.args.get('page')
+    if current_user.is_authenticated:
+        context = {'title_page': 'Friends', 'users': data_tool.get_friends_by_user_id(current_user.id, int(page_number)), 'page': int(page_number)}
+        return render_template('users-list.template.html', context=context)
+    return redirect('/')
+
+@app.route('/add_friend/', methods=['POST'])
+def add_friend():
+    index = request.form['index']
+    print(index)
+    data_tool = DataBaseTool(db_session.create_session()) 
+    data_tool.add_friends(current_user_id=int(current_user.id), user_id=int(index)) 
+    return redirect('/')
+
+@app.route('/delete_friend/', methods=['POST'])
+def delete_friend():
+    index = request.form['index']
+    print(index)
+    data_tool = DataBaseTool(db_session.create_session()) 
+    data_tool.delete_friend(current_user_id=current_user.id, user_id=index) 
+    print(current_user.id, index)
+    return redirect('/')
+
+
     
 
 def main():

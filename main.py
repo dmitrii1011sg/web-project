@@ -1,4 +1,5 @@
 from os import getenv
+from unicodedata import name
 from dotenv import load_dotenv
 import flask_login
 from flask import Flask, render_template, redirect, request
@@ -54,12 +55,18 @@ def regist_user():
 
     form = RegisterForm()  
     context['form'] = form
-
+    print(form.data)
     if form.validate_on_submit():  
+        print('validate success')
         if form.password.data != form.password_again.data:  
             context['message'] = 'Passwords do not match'
             return render_template('register.template.html', context=context)
-        user_info = data_tool.create_user(login=form.login.data, password=form.password.data, roles=form.roles.data, phone_number=form.phone_number.data)
+        user_info = data_tool.create_user(login=form.login.data,
+                                            password=form.password.data,
+                                            phone_number=form.phone_number.data,
+                                            name=form.name.data,
+                                            lastname=form.lastname.data,
+                                            about=form.about.data)
 
         if user_info:
             return redirect("/login")

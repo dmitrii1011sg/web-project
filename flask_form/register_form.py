@@ -7,7 +7,10 @@ from flask_wtf.file import FileField
 class RegisterForm(FlaskForm):
     login = StringField('Login', validators=[DataRequired()])
     phone_number = StringField('Phone number', validators=[DataRequired()])
+    name = StringField('Name', validators=[DataRequired()])
+    lastname = StringField('Last Name')
+    about = TextAreaField('About')
     password = PasswordField('Password', validators=[DataRequired()])
     password_again = PasswordField('Repeat password', validators=[DataRequired()])
-    roles = StringField('Roles')
+    # roles = StringField('Roles')
     submit = SubmitField('Register')

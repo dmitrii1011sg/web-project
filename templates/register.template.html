@@ -1,14 +1,21 @@
 {% extends "base.template.html" %}
 
 {% block content %}
-<form class="form-container">
+<form class="sign-up-form form-container" action="" method="post" novalidate>
       {{ context.form.hidden_tag() }}
       <div class="mb-3">
         <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
       </div>
+      {% if context.message %}
+            <div class="alert alert-danger" role="alert">
+                  {{context.message}}
+            </div>
+      {% endif %}
       <div class="mb-3">{{ context.form.login(type="login", class="form-control", placeholder="Login") }}</div>
+      <div class="mb-3">{{ context.form.name(type="name", class="form-control", placeholder="Name") }}</div>
+      <div class="mb-3">{{ context.form.lastname(type="lastname", class="form-control", placeholder="Last Name") }}</div>
+      <div class="mb-3">{{ context.form.about(type="about", class="form-control", placeholder="About") }}</div>
       <div class="mb-3">{{ context.form.phone_number(type="phone_number", class="form-control", placeholder="Phone Number") }}</div>
-      <div class="mb-3">{{ context.form.roles(type="roles", class="form-control", placeholder="Roles") }}</div>
 
       <div class="mb-3">{{ context.form.password(type="password", class="password", class="form-control", placeholder="Password") }}</div>
       <div class="mb-3">{{ context.form.password_again(type="password", class="password_again", class="form-control", placeholder="Password again") }}</div>

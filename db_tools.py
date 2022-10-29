@@ -3,6 +3,7 @@ import os
 from data.friends_model import Friend
 
 from data.user_model import User
+from sqlalchemy import func
 
 PAGE_SIZE = 10
 
@@ -34,8 +35,8 @@ class DataBaseTool:
         if user: return user.get_user_information()
         return False
 
-    def get_user_by_role(self, role, page=0):
-        users = self.db_sess.query(User).filter(User.role == role).all()
+    def get_user_by_role(self, role: str, page=0):
+        users = self.db_sess.query(User).filter(func.lower(User.role)  == role.lower()).all()
         dia = created_diaposon(col_el=len(users), num_page=page, col_el_page=PAGE_SIZE)
         return users[dia[0]:dia[1]]
 

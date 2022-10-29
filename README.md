@@ -78,7 +78,7 @@ Dmitrii Gorshkov - [@telegram_handle](https://t.me/dmitrii1011) - Team Leader, F
 Egor Zykov - [@telegram_handle](https://t.me/inkogni7o) - Backend Developer <br />
 Konstantin Kraev - [@telegram_handle](https://t.me/kostia1303) - Backend Developer <br />
 Vlad Gavva - [@telegram_handle](https://t.me/neJlbMeHu) - Design <br />
-Tatiana Guseva - Design
+Tatiana Guseva - [@telegram_handle](https://t.me/no_brain_available) - Design
 
 
 Ссылка на проект: [https://github.com/dmitrii1011sg/web-project.git](https://github.com/dmitrii1011sg/forum_flask)

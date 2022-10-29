@@ -1,5 +1,4 @@
 from os import getenv
-from unicodedata import name
 from dotenv import load_dotenv
 import flask_login
 from flask import Flask, render_template, redirect, request
@@ -88,7 +87,7 @@ def users_list():
     page_number = request.args.get('page')
     if current_user.is_authenticated:
         role = current_user.role
-        context = {'title_page': 'Users', 'users': data_tool.get_user_by_role(role, int(page_number)), 'page': int(page_number)}
+        context = {'title_page': 'Users', 'title': 'People with similar interests: ', 'users': data_tool.get_user_by_role(role, int(page_number)), 'page': int(page_number)}
         return render_template('users-list.template.html', context=context)
     return redirect('/')
 
@@ -97,7 +96,7 @@ def frinends_list():
     data_tool = DataBaseTool(db_session.create_session())  
     page_number = request.args.get('page')
     if current_user.is_authenticated:
-        context = {'title_page': 'Friends', 'users': data_tool.get_friends_by_user_id(current_user.id, int(page_number)), 'page': int(page_number)}
+        context = {'title_page': 'Friends', 'title': 'Your Friends: ', 'users': data_tool.get_friends_by_user_id(current_user.id, int(page_number)), 'page': int(page_number)}
         return render_template('users-list.template.html', context=context)
     return redirect('/')
 
@@ -116,9 +115,6 @@ def delete_friend():
     data_tool = DataBaseTool(db_session.create_session()) 
     data_tool.delete_friend(current_user_id=current_user.id, user_id=index) 
     return redirect('/')
-
-
-    
 
 def main():
     db_session.global_init("db/database.db")

@@ -4,43 +4,42 @@
       <div class="container-person">
         <div class="card-persone justify-content-start">
             {% if context.user %}
-            <div class="ava">
-                <img src="{{ context.user.avatar }}" class="img-thumbnail" alt="...">
+            <div class="header-persone row" style="width: 100%;">
+                <img src="{{ context.user.avatar }}" class="img-thumbnail col-4" alt="...">
+                <div class="info col-8">
+                    <h3 class="font-weight-bold">{{ context.user.name }} {{ context.user.lastname }} </h3>
+                    <p class="font-weight-light">{{ context.user.login }}</p>
+                    <p class="font-weight-light">{{ context.user.phone_number }}</p>
+                    {% if current_user.id == context.user.id %}
+                    {% elif current_user.id != context.user.id and not context.friend %}
+                        <form action="/add_friend/" method="POST">
+                            <!-- скрытый параметр -->
+                            <input type="hidden" name="index" value="{{context.user.id}}">
+                            <button type="submit" class="btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                              </svg>
+                            </button>
+                        </form>
+                    {% elif context.friend %}
+                        <form action="/delete_friend/" method="POST">
+                            <!-- скрытый параметр -->
+                            <input type="hidden" name="index" value="{{context.user.id}}">
+                            <button type="submit" class="btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-dash-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M11 7.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z"/>
+                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                </svg>
+                            </button>
+                        </form>
+                    {% endif %}
+                </div>
             </div>
-            <div class="information">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        Name, Lastname: {{ context.user.name }} {{ context.user.lastname }} <br/>
-                        Login: {{ context.user.login }}
-                    </li>
-                    <li class="list-group-item">
-                        Phone Number: {{ context.user.phone_number }}
-                    </li>
-                    <li class="list-group-item">
-                        About: {{ context.user.about }}
-                    </li>
-                    <li class="list-group-item">
-                        Date create: {{ context.user.create_date }}
-                    </li>
-                    {% if current_user.id != context.user.id and not context.friend %}
-                        <li class="list-group-item">
-                            <form action="/add_friend/" method="POST">
-                                <!-- скрытый параметр -->
-                                <input type="hidden" name="index" value="{{context.user.id}}">
-                                <input type="submit" class="btn btn-dark" value="Add Friend">
-                            </form>
-                        </li>
-                    {% endif %}
-                    {% if context.friend %}
-                        <li class="list-group-item">
-                            <form action="/delete_friend/" method="POST">
-                                <!-- скрытый параметр -->
-                                <input type="hidden" name="index" value="{{context.user.id}}">
-                                <input type="submit" class="btn btn-dark" value="delete Friend">
-                            </form>
-                        </li>
-                    {% endif %}
-                </ul>
+            <div class="body-persone row">
+                <h4>About me</h4> 
+                <p class="text-break">{{ context.user.about }}</p>
+                <p>Date create account: {{ context.user.create_date }}</p>
             </div>
         </div>
         {% else %}

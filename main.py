@@ -88,7 +88,7 @@ def users_list():
     page_number = request.args.get('page')
     if current_user.is_authenticated:
         role = current_user.role
-        context = {'title_page': 'Users', 'users': data_tool.get_user_by_role(role)}
+        context = {'title_page': 'Users', 'users': data_tool.get_user_by_role(role, int(page_number)), 'page': int(page_number)}
         return render_template('users-list.template.html', context=context)
     return redirect('/')
     

@@ -2,6 +2,11 @@ import os
 
 from data.user_model import User
 
+PAGE_SIZE = 10
+
+def created_diaposon(num_page, col_el, col_el_page):
+    return col_el - (col_el_page * num_page), col_el - (col_el_page * (num_page - 1))
+
 class DataBaseTool:
     def __init__(self, db_sess):
         self.db_sess = db_sess
@@ -29,7 +34,8 @@ class DataBaseTool:
         if user: return user.get_user_information()
         return False
 
-    def get_user_by_role(self, role):
+    def get_user_by_role(self, role, page=0):
         users = self.db_sess.query(User).filter(User.role == role).all()
-        return users
+        dia = created_diaposon(col_el=len(users), num_page=page, col_el_page=PAGE_SIZE)
+        return users[dia[0]:dia[1]]
     

@@ -59,7 +59,7 @@ def regist_user():
         if form.password.data != form.password_again.data:  
             context['message'] = 'Passwords do not match'
             return render_template('register.template.html', context=context)
-        user_info = data_tool.create_user(login=form.login.data, password=form.password.data, roles=form.roles.data)
+        user_info = data_tool.create_user(login=form.login.data, password=form.password.data, roles=form.roles.data, phone_number=form.phone_number.data)
 
         if user_info:
             return redirect("/login")

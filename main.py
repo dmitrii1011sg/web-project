@@ -115,7 +115,6 @@ def delete_friend():
     print(index)
     data_tool = DataBaseTool(db_session.create_session()) 
     data_tool.delete_friend(current_user_id=current_user.id, user_id=index) 
-    print(current_user.id, index)
     return redirect('/')
 
 

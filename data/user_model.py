@@ -36,6 +36,7 @@ class User(SqlAlchemyBase, UserMixin):
             'lastname': self.lastname,
             'about': self.about,
             'phone_number': self.phone_number,
-            'create_date': self.created_date
+            'create_date': self.created_date,
+            'avatar': self.avatar
         }
         return information
